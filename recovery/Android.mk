@@ -1,5 +1,3 @@
-ifneq (,$(findstring $(TARGET_DEVICE),astar-y3))
-
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
@@ -8,7 +6,7 @@ LOCAL_C_INCLUDES += bootable/recovery
 LOCAL_SRC_FILES := default_device.cpp
 
 # should match TARGET_RECOVERY_UI_LIB set in BoardConfig.mk
-LOCAL_MODULE := librecovery_ui_astar_y3
+LOCAL_MODULE := librecovery_ui_polaris_p1
 
 include $(BUILD_STATIC_LIBRARY)
 
@@ -21,8 +19,6 @@ LOCAL_C_INCLUDES += bootable/recovery
 LOCAL_SRC_FILES := recovery_updater.c bootloader.c
 
 # should match TARGET_RECOVERY_UPDATER_LIBS set in BoardConfig.mk
-LOCAL_MODULE := librecovery_updater_astar_y3
+LOCAL_MODULE := librecovery_updater_polaris_p1
 
 include $(BUILD_STATIC_LIBRARY)
-
-endif

@@ -20,8 +20,8 @@
 #include "device.h"
 #include "screen_ui.h"
 
-#define KEY_HOME			102
-#define KEY_VOLUMEDOWN		114
+#define KEY_HOME		28
+#define KEY_VOLUMEDOWN		102 // key:HOME for key:VOLUME_DOWN's function
 #define KEY_VOLUMEUP		115
 #define KEY_ENTER		116	
 
@@ -39,7 +39,7 @@ static const char* ITEMS[] =  {"reboot system now",
                                "apply update from cache",
                                NULL };
 
-static const char* INTSTORAGE = "/data/media/0";
+static const char* INTSTORAGE = "/sdcard";
 static const char* EXTSTORAGE = "/extsd";
 
 class DefaultUI : public ScreenRecoveryUI {

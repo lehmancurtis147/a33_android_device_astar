@@ -21,5 +21,5 @@
 # function: add_lunch_combo generic-eng
 
 #!/bin/bash
-add_lunch_combo astar_y3-eng
-add_lunch_combo astar_y3-user
+add_lunch_combo cm_astar-eng
+add_lunch_combo cm_astar-user
