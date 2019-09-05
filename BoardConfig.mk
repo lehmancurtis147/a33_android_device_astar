@@ -1,4 +1,4 @@
-LOCAL_PATH           := device/softwinner/astar
+LOCAL_PATH           := device/allwinner/astar
 USE_CAMERA_STUB      := true
 
 # BoardConfig.mk
@@ -6,7 +6,7 @@ USE_CAMERA_STUB      := true
 # Product-specific compile-time definitions.
 #
 
-#include device/softwinner/polaris-common/BoardConfigCommon.mk
+#include device/allwinner/polaris-common/BoardConfigCommon.mk
 
 TARGET_CPU_ABI                          := armeabi-v7a
 TARGET_CPU_ABI2                         := armeabi
@@ -33,7 +33,7 @@ TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK   := true
 TARGET_PROVIDES_INIT_RC                 := true
 TARGET_KERNEL_ARCH                      := arm
 # bt default config
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/softwinner/astar/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/allwinner/astar/bluetooth
 BOARD_KERNEL_CMDLINE                    := console=ttyS0,115200 rw init=/init loglevel=4
 BOARD_KERNEL_BASE                       := 0x40000000
 BOARD_KERNEL_PAGESIZE                   := 2048
@@ -125,7 +125,7 @@ endif
 
 # 2. Bluetooth Configuration
 # make sure BOARD_HAVE_BLUETOOTH is true for every bt vendor
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/softwinner/astar/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/allwinner/astar/bluetooth
 BOARD_HAVE_BLUETOOTH_NAME              := rtl8723bs
 BOARD_HAVE_BLUETOOTH_RTK               := true
 BLUETOOTH_HCI_USE_RTK_H5               := true

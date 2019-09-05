@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 # Inherit device configuration
-$(call inherit-product, device/softwinner/astar/astar.mk)
+$(call inherit-product, device/allwinner/astar/astar.mk)
 
 # Inherit some common CyanogenMod stuff.
 $(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
@@ -37,7 +37,7 @@ PRODUCT_DEVICE := astar
 PRODUCT_NAME := cm_astar
 PRODUCT_BRAND := astar
 PRODUCT_MODEL := Q88H
-PRODUCT_MANUFACTURER := softwinner
+PRODUCT_MANUFACTURER := allwinner
 
 # Allow ADB (to access dev settings)
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.adb.secure=0 ro.secure=0 ro.allow.mock.location=1 service.adb.enable=1 persist.sys.usb.config=mass_storage ro.debuggable=1 persist.service.adb.enable=1 
