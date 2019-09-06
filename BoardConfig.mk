@@ -22,7 +22,7 @@ TARGET_BOOTLOADER_BOARD_NAME            := exdroid
 CEDARX_USE_ION_MEM_ALLOCATOR            := true
 
 BOARD_EGL_CFG                           := $(LOCAL_PATH)/egl/egl.cfg
-COMMON_GLOBAL_CFLAGS                    += -DWORKAROUND_BUG_10194508
+# COMMON_GLOBAL_CFLAGS                    += -DWORKAROUND_BUG_10194508
 BOARD_EGL_WORKAROUND_BUG_10194508       := true
 USE_OPENGL_RENDERER                     := true
 ENABLE_WEBGL                            := true
@@ -30,10 +30,8 @@ BOARD_USE_SKIA_LCDTEXT                  := true
 BOARD_EGL_NEEDS_LEGACY_FB               := true
 BOARD_NO_ALLOW_DEQUEUE_CURRENT_BUFFER   := true
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK   := true
-TARGET_PROVIDES_INIT_RC                 := true
+# TARGET_PROVIDES_INIT_RC                 := true
 TARGET_KERNEL_ARCH                      := arm
-# bt default config
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/allwinner/astar/bluetooth
 BOARD_KERNEL_CMDLINE                    := console=ttyS0,115200 rw init=/init loglevel=4
 BOARD_KERNEL_BASE                       := 0x40000000
 BOARD_KERNEL_PAGESIZE                   := 2048
@@ -51,13 +49,12 @@ DEVICE_RESOLUTION                       := 1024x600
 
 #recovery
 #TARGET_RECOVERY_UI_LIB := librecovery_ui_astar_y3
-RECOVERY_SDCARD_ON_DATA                 := false
+# RECOVERY_SDCARD_ON_DATA                 := false
 BOARD_USE_USB_MASS_STORAGE_SWITCH       := true
 BOARD_SDCARD_DEVICE_PRIMARY             := /dev/block/by-name/UDISK
 BOARD_HAS_SDCARD_INTERNAL               := true
 BOARD_SDCARD_DEVICE_INTERNAL            := /dev/block/by-name/UDISK
 BOARD_SDEXT_DEVICE                      := /dev/block/mmcblk0p1
-
 
 TARGET_NO_BOOTLOADER                    := true
 TARGET_NO_RECOVERY                      := false
@@ -83,44 +80,6 @@ ifeq ($(BOARD_WIFI_VENDOR), realtek)
     
     #SW_BOARD_USR_WIFI := rtl8723bs
     #BOARD_WLAN_DEVICE := rtl8723bs
-endif
-
-# 1.2 broadcom wifi support
-#BOARD_WIFI_VENDOR := broadcom
-ifeq ($(BOARD_WIFI_VENDOR), broadcom)
-    BOARD_WPA_SUPPLICANT_DRIVER := NL80211
-    WPA_SUPPLICANT_VERSION      := VER_0_8_X
-    BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
-    BOARD_HOSTAPD_DRIVER        := NL80211
-    BOARD_HOSTAPD_PRIVATE_LIB   := lib_driver_cmd_bcmdhd
-    BOARD_WLAN_DEVICE           := bcmdhd
-    WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/bcmdhd/parameters/firmware_path"
-
-    #SW_BOARD_USR_WIFI := AP6181
-    SW_BOARD_USR_WIFI := AP6210
-    WIFI_DRIVER_FW_PATH_STA    := "/system/vendor/modules/fw_bcm40181a2.bin"
-    WIFI_DRIVER_FW_PATH_P2P    := "/system/vendor/modules/fw_bcm40181a2_p2p.bin"
-    WIFI_DRIVER_FW_PATH_AP     := "/system/vendor/modules/fw_bcm40181a2_apsta.bin"
-
-    #SW_BOARD_USR_WIFI := AP6330
-    #WIFI_DRIVER_FW_PATH_STA    := "/system/vendor/modules/fw_bcm40183b2_ag.bin"
-    #WIFI_DRIVER_FW_PATH_P2P    := "/system/vendor/modules/fw_bcm40183b2_ag_p2p.bin"
-    #WIFI_DRIVER_FW_PATH_AP     := "/system/vendor/modules/fw_bcm40183b2_ag_apsta.bin"
-
-endif
-
-#1.3 eag wifi config
-#BOARD_WIFI_VENDOR := eagle
-ifeq ($(BOARD_WIFI_VENDOR), eagle)
-    WPA_SUPPLICANT_VERSION := VER_0_8_X
-    BOARD_WPA_SUPPLICANT_DRIVER := NL80211
-    BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_eagle
-    BOARD_HOSTAPD_DRIVER        := NL80211
-    BOARD_HOSTAPD_PRIVATE_LIB   := lib_driver_cmd_eagle
-
-    SW_BOARD_USR_WIFI := esp8089
-    BOARD_WLAN_DEVICE := esp8089
-
 endif
 
 # 2. Bluetooth Configuration
